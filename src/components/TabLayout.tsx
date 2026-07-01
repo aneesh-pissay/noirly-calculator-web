@@ -13,9 +13,7 @@ const TABS = [
 ];
 
 const BOTTOM_LINKS = [
-  { path: '/history',        label: 'History',        icon: 'history' },
-  { path: '/privacy-policy', label: 'Privacy Policy', icon: 'shield' },
-  { path: '/terms',          label: 'Terms',          icon: 'description' },
+  { path: '/history', label: 'History', icon: 'history' },
 ];
 
 export default function TabLayout() {

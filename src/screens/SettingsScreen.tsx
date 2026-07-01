@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import { Icon } from '@mdi/react';
-import { mdiWeatherNight, mdiShieldCheckOutline, mdiChevronRight } from '@mdi/js';
+import { mdiWeatherNight, mdiShieldCheckOutline, mdiFileDocumentOutline, mdiChevronRight } from '@mdi/js';
 import { useThemeColors } from '../theme/ThemeContext';
 import type { Colors } from '../theme/colors';
+import { PRIVACY_POLICY_URL, TERMS_OF_SERVICE_URL } from '../lib/links';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { setTheme } from '../store/settingsSlice';
 import type { ThemeMode } from '../store/settingsSlice';
@@ -46,12 +47,21 @@ export default function SettingsScreen() {
       <span style={s.sectionLabel}>LEGAL</span>
       <div style={s.card}>
         <a
-          href="https://example.com/privacy"
+          href={PRIVACY_POLICY_URL}
           target="_blank"
           rel="noopener noreferrer"
           style={s.cardRowLink}>
           <Icon path={mdiShieldCheckOutline} size={0.9} color={c.onSurfaceVariant} />
           <span style={s.cardRowLabel}>Privacy Policy</span>
+          <Icon path={mdiChevronRight} size={0.85} color={c.outlineVariant} />
+        </a>
+        <a
+          href={TERMS_OF_SERVICE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={s.cardRowLink}>
+          <Icon path={mdiFileDocumentOutline} size={0.9} color={c.onSurfaceVariant} />
+          <span style={s.cardRowLabel}>Terms of Service</span>
           <Icon path={mdiChevronRight} size={0.85} color={c.outlineVariant} />
         </a>
       </div>

@@ -4,6 +4,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
 import { ThemeProvider } from './theme/ThemeContext';
 import TabLayout from './components/TabLayout';
+import LegalPageLayout from './components/LegalPageLayout';
 import LandingPage from './screens/LandingPage';
 import CalcScreen from './screens/CalcScreen';
 import ScientificScreen from './screens/ScientificScreen';
@@ -22,6 +23,10 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route index element={<LandingPage />} />
+              <Route element={<LegalPageLayout />}>
+                <Route path="privacy-policy" element={<PrivacyPolicyScreen />} />
+                <Route path="terms" element={<TermsOfServiceScreen />} />
+              </Route>
               <Route element={<TabLayout />}>
                 <Route path="calc" element={<CalcScreen />} />
                 <Route path="scientific" element={<ScientificScreen />} />
@@ -29,8 +34,6 @@ export default function App() {
                 <Route path="graph" element={<GraphScreen />} />
                 <Route path="programmer" element={<ProgrammerScreen />} />
                 <Route path="history" element={<HistoryScreen />} />
-                <Route path="privacy-policy" element={<PrivacyPolicyScreen />} />
-                <Route path="terms" element={<TermsOfServiceScreen />} />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

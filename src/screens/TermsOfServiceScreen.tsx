@@ -195,9 +195,8 @@ function makeStyles(c: Colors): Record<string, React.CSSProperties> {
     root: {
       display: 'flex',
       flexDirection: 'column',
-      height: '100%',
+      minHeight: '100%',
       backgroundColor: c.background,
-      overflow: 'hidden',
     },
     scroll: {
       flex: 1,
